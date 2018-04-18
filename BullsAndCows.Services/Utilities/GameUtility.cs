@@ -45,6 +45,8 @@ namespace BullsAndCows.Services.Utilities
 
         public string GenerateNumber()
         {
+            //Our bot isn't very imaginative. I guess he expects that you'll never think to guess the same number twice.
+            //Oh, well. At least he'll make it easier to test.
             return "1234";
         }
 

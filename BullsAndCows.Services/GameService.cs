@@ -53,6 +53,9 @@ namespace BullsAndCows.Services
 
         public string GenerateGuess()
         {
+            //Our bot is extremely stupid. It predicts the same value over and over again...
+            //A smarter bot could, say take his best guess and make new guesses with the same numbers as there are cows...
+
             return "2345";
         }
 

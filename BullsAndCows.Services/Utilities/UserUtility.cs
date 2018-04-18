@@ -27,7 +27,6 @@ namespace BullsAndCows.Services.Utilities
             this.unitOfWork = unitOfWork;
         }
 
-        //TODO add paging
         public IEnumerable<User> GetAll()
         {
             return this.userRepository.Entities.ToList();

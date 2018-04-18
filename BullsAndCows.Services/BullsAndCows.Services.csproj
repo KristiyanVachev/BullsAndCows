@@ -85,10 +85,8 @@
     <Compile Include="Contracts\IRankListService.cs" />
     <Compile Include="RankListService.cs" />
     <Compile Include="Utilities\Contracts\IGameUtility.cs" />
-    <Compile Include="Utilities\Contracts\IUserUtility.cs" />
     <Compile Include="GameService.cs" />
     <Compile Include="Utilities\GameUtility.cs" />
-    <Compile Include="Utilities\UserUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

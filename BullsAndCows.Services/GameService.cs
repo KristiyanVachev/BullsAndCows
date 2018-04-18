@@ -9,20 +9,15 @@ namespace BullsAndCows.Services
     public class GameService : IGameService
     {
         private readonly IGameUtility gameUtility;
-        private readonly IUserUtility userUtility;
         private readonly IAuthenticationProvider authenticationProvider;
 
-        public GameService(IGameUtility gameUtility,
-            IUserUtility userUtility,
-            IAuthenticationProvider authenticationProvider)
+        public GameService(IGameUtility gameUtility, IAuthenticationProvider authenticationProvider)
         {
             //TODO: Extract "cannot be null" message to costant
             Guard.WhenArgument(gameUtility, "GameUtility cannot be null").IsNull().Throw();
-            Guard.WhenArgument(userUtility, "UserUtility cannot be null").IsNull().Throw();
             Guard.WhenArgument(authenticationProvider, "AuthenticationProvider cannot be null").IsNull().Throw();
 
             this.gameUtility = gameUtility;
-            this.userUtility = userUtility;
             this.authenticationProvider = authenticationProvider;
         }
 

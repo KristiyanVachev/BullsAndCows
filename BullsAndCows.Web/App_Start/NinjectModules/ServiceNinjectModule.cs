@@ -14,7 +14,6 @@ namespace BullsAndCows.Web.App_Start.NinjectModules
             this.Bind<IRankListService>().To<RankListService>();
 
             this.Bind<IGameUtility>().To<GameUtility>();
-            this.Bind<IUserUtility>().To<UserUtility>();
         }
     }
 }

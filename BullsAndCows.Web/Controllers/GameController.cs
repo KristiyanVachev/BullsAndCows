@@ -3,6 +3,7 @@ using Bytes2you.Validation;
 using BullsAndCows.Services.Contracts;
 using BullsAndCows.Web.Models;
 using BullsAndCows.Web.Models.Game;
+using BullsAndCows.Commom;
 
 namespace BullsAndCows.Web.Controllers
 {
@@ -67,9 +68,8 @@ namespace BullsAndCows.Web.Controllers
                 //Check player's guess
                 var playerGuess = this.gameService.MakeAGuess(viewModel.Id, viewModel.Guess, true);
 
-                //TODO: Extract constant
                 //If the player has 4 bulls, he wins
-                if (playerGuess.Bulls == 4)
+                if (playerGuess.Bulls == Constants.NumberDigits)
                 {
                     this.gameService.FinishGame(viewModel.Id, true);
                 }
@@ -80,7 +80,7 @@ namespace BullsAndCows.Web.Controllers
 
                     var computerGuess = this.gameService.MakeAGuess(viewModel.Id, generatedComputerGuess, false);
 
-                    if (computerGuess.Bulls == 4)
+                    if (computerGuess.Bulls == Constants.NumberDigits)
                     {
                         this.gameService.FinishGame(viewModel.Id, false);
                     }

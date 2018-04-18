@@ -141,6 +141,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Utillities\GetBullsTests.cs" />
+    <Compile Include="Web\Controllers\RankListControllerTests\TopTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

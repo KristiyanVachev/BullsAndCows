@@ -11,7 +11,6 @@ namespace BullsAndCows.Services.Utilities
     public class GameUtility : IGameUtility
     {
         private readonly IRepository<Game> gameRepository;
-        private readonly IRepository<Guess> guessRepository;
         private readonly IGameFactory gameFactory;
         private readonly IUnitOfWork unitOfWork;
         private readonly IDateTimeProvider dateTimeProvider;

@@ -82,6 +82,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IGameService.cs" />
+    <Compile Include="Contracts\IRankListService.cs" />
+    <Compile Include="RankListService.cs" />
     <Compile Include="Utilities\Contracts\IGameUtility.cs" />
     <Compile Include="Utilities\Contracts\IUserUtility.cs" />
     <Compile Include="GameService.cs" />

@@ -1,0 +1,10 @@
+﻿@using BullsAndCows.Models
+@model ICollection<Game>
+
+<h2>Top 25</h2>
+
+@foreach (var game in Model)
+{
+    <p>Player: @game.User.UserName won in @game.Turn turns</p>
+}
+

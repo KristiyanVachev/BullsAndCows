@@ -214,6 +214,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\GameController.cs" />
+    <Compile Include="Controllers\RankListController.cs" />
     <Compile Include="Models\Game\NewGameViewModel.cs" />
     <Compile Include="Models\Game\GameViewModel.cs" />
     <Compile Include="Models\IViewModelFactory.cs" />
@@ -275,6 +276,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Game\Index.cshtml" />
     <Content Include="Views\Game\Game.cshtml" />
+    <Content Include="Views\RankList\Top.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

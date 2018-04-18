@@ -11,6 +11,7 @@ namespace BullsAndCows.Web.App_Start.NinjectModules
         public override void Load()
         {
             this.Bind<IGameService>().To<GameService>();
+            this.Bind<IRankListService>().To<RankListService>();
 
             this.Bind<IGameUtility>().To<GameUtility>();
             this.Bind<IUserUtility>().To<UserUtility>();

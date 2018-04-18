@@ -1,0 +1,59 @@
+﻿@using BullsAndCows.Web.Models.Game
+@model  GameViewModel
+
+<h2>Game on!</h2>
+
+@if (Model.Guesses != null)
+{
+    foreach (var guess in Model.Guesses)
+    {
+        if (guess.IsPlayer)
+        {
+            <p style="color:aqua;">You got @guess.Bulls bulls and @guess.Cows cows.</p>
+        }
+        else
+        {
+            <p style="color:orange">Computer got @guess.Bulls bulls and @guess.Cows cows.</p>
+        }
+    }
+}
+
+@if (Model.IsFinished)
+{
+    if (Model.IsPlayerWinner)
+    {
+        <h1>You win!</h1>
+    }
+    else
+    {
+        <h1>Computer wins!</h1>
+    }
+}
+else
+{
+    using (Html.BeginForm("Guess", "Game"))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+
+        @Html.HiddenFor(x => x.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Guess, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Guess, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Guess" />
+            </div>
+        </div>
+    }
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+}

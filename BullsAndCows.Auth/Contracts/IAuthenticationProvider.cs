@@ -1,0 +1,31 @@
+﻿using BullsAndCows.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+
+namespace BullsAndCows.Auth.Contracts
+{
+    public interface IAuthenticationProvider
+    {
+        bool IsAuthenticated { get; }
+
+        string CurrentUserId { get; }
+
+        string CurrentUserName { get; }
+
+        bool IsInRole(string userId, string roleName);
+
+        IdentityResult AddToRole(string userId, string roleName);
+
+        IdentityResult RemoveFromRole(string userId, string roleName);
+
+        IdentityResult CreateUser(User user, string password);
+
+        void SignIn(User user, bool isPersistent, bool rememberBrowser);
+
+        SignInStatus SignInWithPassword(string email, string password, bool rememberMe, bool shouldLockout);
+
+        IdentityResult RegisterAndLoginUser(User user, string password, bool isPersistent, bool rememberBrowser);
+
+        void SignOut();
+    }
+}
